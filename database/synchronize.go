@@ -25,7 +25,7 @@ func migrate(tx *gorm.DB) error {
 		return err
 	}
 
-	if err := tx.Exec("ALTER TABLE threads ADD CONSTRAINT fk_ FOREIGN KEY (thread_id) REFRENCES thread (id)").Error; err != nil {
+	if err := tx.Exec("ALTER TABLE threads ADD CONSTRAINT fk_ FOREIGN KEY (thread_id) REFERENCES thread (id)").Error; err != nil {
 		return err
 	}
 	return nil
